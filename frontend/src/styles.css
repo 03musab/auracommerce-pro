@@ -1,0 +1,223 @@
+/* Import Google Fonts - Outfit and Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+/* Import Bootstrap and Bootstrap Icons */
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+:root {
+  --primary-glow: radial-gradient(rgba(139, 92, 246, 0.15), rgba(219, 39, 119, 0.05));
+  --accent-purple: #8b5cf6;
+  --accent-pink: #db2777;
+  --dark-bg: #0f0c1b;
+  --dark-surface: rgba(30, 27, 57, 0.4);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --text-muted: #a0aec0;
+  --text-light: #f7fafc;
+  --neon-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+  --premium-gradient: linear-gradient(135deg, #8b5cf6 0%, #db2777 100%);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--dark-bg);
+  color: var(--text-light);
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(139, 92, 246, 0.12) 0, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(219, 39, 119, 0.12) 0, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(15, 12, 27, 1) 0, rgba(15, 12, 27, 0.95) 100%);
+  background-attachment: fixed;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+}
+
+/* Glassmorphism Styles */
+.glass-panel {
+  background: var(--dark-surface);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.glass-card {
+  background: rgba(30, 27, 57, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
+}
+
+.glass-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(139, 92, 246, 0.3);
+  box-shadow: 0 12px 30px rgba(139, 92, 246, 0.15);
+}
+
+/* Form Controls with Glow Animation */
+.glass-input {
+  background: rgba(15, 12, 27, 0.6) !important;
+  border: 1px solid var(--glass-border) !important;
+  color: var(--text-light) !important;
+  border-radius: 8px !important;
+  padding: 12px 16px !important;
+  transition: all 0.3s ease !important;
+}
+
+.glass-input.ps-5 {
+  padding-left: 3rem !important;
+}
+
+.glass-input.px-5 {
+  padding-left: 3rem !important;
+  padding-right: 3rem !important;
+}
+
+.glass-input:focus {
+  border-color: var(--accent-purple) !important;
+  box-shadow: var(--neon-shadow) !important;
+  outline: none !important;
+}
+
+.glass-input::placeholder {
+  color: var(--text-muted) !important;
+  opacity: 0.7;
+}
+
+/* Premium Gradient Buttons */
+.btn-premium {
+  background: var(--premium-gradient);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+.btn-premium:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.5);
+  color: #fff;
+}
+
+.btn-premium:active {
+  transform: scale(0.98);
+}
+
+.btn-premium:disabled {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+  box-shadow: none;
+  transform: none;
+  cursor: not-allowed;
+}
+
+/* Secondary Glass Button */
+.btn-glass {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  color: var(--text-light);
+  font-weight: 500;
+  padding: 12px 24px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.5);
+}
+
+/* App Skeleton Loader Styles */
+.skeleton {
+  background: linear-gradient(90deg, rgba(255,255,255,0.03) 25%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.03) 75%);
+  background-size: 200% 100%;
+  animation: loading-skeleton 1.5s infinite;
+  border-radius: 4px;
+}
+
+@keyframes loading-skeleton {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Badge Glow */
+.badge-glow {
+  box-shadow: 0 0 10px rgba(219, 39, 119, 0.6);
+  background-color: var(--accent-pink) !important;
+}
+
+.bg-purple-glow {
+  background-color: rgba(139, 92, 246, 0.2) !important;
+  border: 1px solid rgba(139, 92, 246, 0.3) !important;
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.45) !important;
+}
+
+/* Support Reduced Motion for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-delay: 0s !important;
+    animation-duration: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0s !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Make all text white globally */
+.text-secondary,
+.text-muted,
+.card-text,
+.form-label,
+.small,
+.text-wrap-limit,
+.nav-link:not(.active):not(:hover),
+.dropdown-item:not(:hover),
+label,
+span.text-secondary,
+span.text-muted,
+p.text-secondary,
+p.text-muted,
+.timeline-node-label {
+  color: #ffffff !important;
+}
+
+/* Ensure placeholder texts inside inputs remain slightly muted for usability/contrast */
+.glass-input::placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
